@@ -1,0 +1,30 @@
+replicaCount: 2
+
+image:
+  repository: myapp
+  tag: local
+  pullPolicy: Never
+
+service:
+  port: 80
+  targetPort: 3000
+
+ingress:
+  enabled: true
+  className: nginx
+  host: myapp.local
+  tls: false
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 70

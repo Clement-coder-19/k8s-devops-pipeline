@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MyApp sur AKS</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #0f172a;
+      color: #f8fafc;
+    }
+    h1 { font-size: 2rem; }
+    #hostname {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #1e293b;
+      border-radius: 8px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mon app tourne sur Kubernetes (AKS)</h1>
+  <div id="hostname">Chargement...</div>
+
+  <script>
+    fetch('/api/info')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('hostname').textContent =
+          'Pod: ' + data.hostname;
+      });
+  </script>
+</body>
+</html>

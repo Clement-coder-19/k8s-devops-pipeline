@@ -1,0 +1,9 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "App pour kubernetes projet",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
