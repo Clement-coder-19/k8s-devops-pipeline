@@ -76,6 +76,28 @@ minikube tunnel
 ```
 puis ajout de `127.0.0.1 myapp.local` dans le fichier hosts local, et navigation vers `http://myapp.local`.
 
+## Test de l'autoscaling (HPA)
+
+Procedure pour verifier que le HPA reagit bien a une charge CPU reelle.
+
+Verifier l'etat initial, au repos :
+```bash
+kubectl get hpa -w
+```
+
+Dans un terminal separe, generer de la charge sur l'application via un pod dedie qui appelle le service en boucle :
+```bash
+kubectl run load-test --image=busybox --restart=Never -- /bin/sh -c "while true; do wget -q -O- http://myapp; done"
+```
+
+Observer, dans le terminal ou tourne `kubectl get hpa -w`, la colonne `TARGETS` monter au-dessus du seuil de 70 pourcent, puis la colonne `REPLICAS` augmenter progressivement (de 2 vers le maximum defini a 6).
+
+Une fois la demonstration terminee, supprimer le pod de charge :
+```bash
+kubectl delete pod load-test
+```
+Le nombre de replicas redescend automatiquement a 2 apres quelques minutes, une fois la charge CPU retombee sous le seuil.
+
 ## Monitoring et logs
 
 Installation de la stack observabilite :
@@ -100,7 +122,6 @@ Voir le dossier `docs/screenshots/` :
 
 - `pods-running.png` - ensemble des pods de l'application et de la stack monitoring en fonctionnement
 - `app-browser.png` - application accessible dans le navigateur
-- `grafana-dashboard.png` - dashboard Grafana avec metriques CPU/memoire en temps reel
 - `hpa-scaling.png` - autoscaling en action, montee du nombre de pods sous charge
 - `grafana-loki-logs.png` - exploration des logs de l'application via Grafana/Loki
 
