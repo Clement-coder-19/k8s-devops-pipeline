@@ -12,7 +12,7 @@ Application web conteneurisee deployee sur Kubernetes, avec pipeline CI/CD, auto
 - HPA (Horizontal Pod Autoscaler) - scaling automatique selon la charge CPU
 - Prometheus + Grafana - monitoring et visualisation des metriques
 - Loki + Promtail - agregation et exploration centralisee des logs
-
+  
 ## Architecture
 
 ```
