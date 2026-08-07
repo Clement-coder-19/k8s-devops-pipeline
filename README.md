@@ -166,7 +166,7 @@ helm install loki grafana/loki -n monitoring -f loki-values.yaml
 
 ## Ce que ce projet demontre
 
-Ce projet couvre l'ensemble du cycle de vie d'une application cloud-native : de la conteneurisation a l'observabilite en production, en passant par l'automatisation complete du deploiement. Au-dela de la partie technique, il illustre une capacite a diagnostiquer et resoudre des blocages d'infrastructure reels - configuration reseau, compatibilite de versions entre outils, comportement par defaut de charts Helm - en s'appuyant sur les messages d'erreur et les logs plutot qu'en s'arretant au premier obstacle.
+Ce projet couvre l'ensemble du cycle de vie d'une application cloud-native : de la conteneurisation a l'observabilite en production, en passant par l'automatisation complete du deploiement. 
 
 ## Licence
 
