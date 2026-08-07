@@ -12,21 +12,22 @@ Application web conteneurisee deployee sur Kubernetes, avec pipeline CI/CD, auto
 - HPA (Horizontal Pod Autoscaler) - scaling automatique selon la charge CPU
 - Prometheus + Grafana - monitoring et visualisation des metriques
 - Loki + Promtail - agregation et exploration centralisee des logs
+
+## Contexte du projet
+
+Avant de commencer ce projet, mes connaissances reposaient principalement sur Docker et Kubernetes. Les autres technologies utilisées dans la plateforme, notamment Helm, GitHub Actions et la stack d’observabilité, étaient nouvelles pour moi.
+
+Mon objectif initial était de réaliser ce projet directement sur Microsoft Azure. Cependant, j’ai rencontré une limitation liée aux quotas de machines virtuelles disponibles dans la région **France Central**, qu’il m’était impossible d’augmenter. J’ai donc adapté mon approche en utilisant **Minikube** pour déployer et tester la plateforme localement, ainsi que **Docker Hub** pour la publication et la gestion de mes images Docker.
+
+Par la suite, j’ai pu contourner cette limitation en utilisant la région **Poland Central** pour mes ressources Azure. Cela m’a permis de reprendre l’idée initiale et de la concrétiser dans un projet Azure plus complet, disponible ici : [azure-aks-terraform-platform](https://github.com/Clement-coder-19/azure-aks-terraform-platform).
+
+Ce projet Kubernetes & Observabilité constitue ainsi une première étape dans mon apprentissage du Cloud et du DevOps. Il m’a permis de consolider mes bases sur Kubernetes tout en découvrant la conteneurisation avancée, Helm, le CI/CD et l’observabilité, avant de mettre ces connaissances en pratique dans une infrastructure Kubernetes plus complète sur Azure.
+
   
 ## Architecture
 
-```
-GitHub push -> GitHub Actions -> Build & Push image (registre de conteneurs)
-                                        |
-                                 Deploiement Helm sur le cluster
-                                        |
-              +-------------------------------------------+
-              |  Ingress NGINX (routage HTTP)              |
-              |  Deployment (2-6 pods, HPA sur CPU)        |
-              |  Prometheus + Grafana (metriques)          |
-              |  Loki + Promtail (logs centralises)        |
-              +-------------------------------------------+
-```
+![Architecture du projet](screenshots/ArchitectureProjet.png)
+
 
 ## Fonctionnalites demontrees
 
