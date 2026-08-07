@@ -128,7 +128,7 @@ Voir le dossier `docs/screenshots/` :
 
 ## Problemes rencontres et resolutions
 
-Un projet DevOps reel n'est jamais lineaire. Voici les principaux blocages rencontres au fil du projet et la maniere dont ils ont ete resolus.
+Un projet DevOps n'est jamais lineaire. Voici les principaux blocages rencontres au fil du projet et la maniere dont ils ont ete resolus.
 
 ### Dashboards Grafana vides malgre des metriques collectees
 
