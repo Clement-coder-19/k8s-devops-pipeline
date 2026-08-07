@@ -21,7 +21,7 @@ Mon objectif initial était de réaliser ce projet directement sur Microsoft Azu
 
 Par la suite, j’ai pu contourner cette limitation en utilisant la région **Poland Central** pour mes ressources Azure. Cela m’a permis de reprendre l’idée initiale et de la concrétiser dans un projet Azure plus complet, disponible ici : [azure-aks-terraform-platform](https://github.com/Clement-coder-19/azure-aks-terraform-platform).
 
-Ce projet Kubernetes & Observabilité constitue ainsi une première étape dans mon apprentissage du Cloud et du DevOps. Il m’a permis de consolider mes bases sur Kubernetes tout en découvrant la conteneurisation avancée, Helm, le CI/CD et l’observabilité, avant de mettre ces connaissances en pratique dans une infrastructure Kubernetes plus complète sur Azure.
+Ce projet Kubernetes & Observabilité constitue ainsi une étape supplémentaire dans mon apprentissage du Cloud et du DevOps. Il m’a permis de consolider mes bases sur Kubernetes tout en découvrant la conteneurisation avancée, Helm, le CI/CD et l’observabilité, avant de mettre ces connaissances en pratique dans une infrastructure Kubernetes plus complète sur Azure.
 
   
 ## Architecture
